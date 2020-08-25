@@ -39,6 +39,9 @@ window.benchmarkClient = {
             document.getElementById('confidence-number').textContent = '\u00b1 ' + results.formattedDelta;
 
         this._populateDetailedResults(results.formattedValues);
+        console.log("[SPEEDOMETER] ", results);
+        console.log("[SPEEDOMETER] ", results.formattedValues);
+        console.log('[SPEEDOMETER] FINISH');
         document.getElementById('results-with-statistics').textContent = results.formattedMeanAndDelta;
 
         if (this.displayUnit == 'ms') {
@@ -243,4 +246,5 @@ function showAbout() {
 window.addEventListener('DOMContentLoaded', function () {
     if (benchmarkClient.prepareUI)
         benchmarkClient.prepareUI();
+        startTest();
 });
